@@ -1,0 +1,127 @@
+
+[
+    {
+        "id": 1,
+        "title": "Aspirin",
+        "description": "A common pain reliever and anti-inflammatory used to reduce fever and inflammation.",
+        "image": "https://media.istockphoto.com/id/2194807511/photo/aspirin-drugs-and-floating-acetylsalicylic-acid-molecule.jpg?s=612x612&w=0&k=20&c=r6zH0XhvDrAYYELRaG4FuBDTeIVOKa8nykI4gmUlIL4=",
+        "price": 5.99,
+        "quantity": 100,
+        "rating": {
+            "rate": 3.9,
+            "count": 120
+         }
+      },
+      {
+        "id": 2,
+        "title": "Ibuprofen",
+        "description": "An anti-inflammatory drug used to treat fever, pain, and swelling.",
+        "image": "https://images.unsplash.com/photo-1550572017-4fcdbb59cc32?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SWJ1cHJvZmVufGVufDB8fDB8fHww",
+        "price": 7.49,
+        "quantity": 200,
+        "rating": {
+            "rate": 4.1,
+            "count": 256
+         }
+      },
+      {
+        "id": 3,
+        "title": "Paracetamol",
+        "description": "A painkiller and fever reducer commonly used to treat mild to moderate pain.",
+        "image": "https://media.istockphoto.com/id/1022216070/photo/packet-of-generic-paracetamol-tablets.webp?a=1&b=1&s=612x612&w=0&k=20&c=UFjLzB41Y_dst-ZRd_xnwMYS4EKaVP3dd-bcZUmOO-s=",
+        "price": 4.99,
+        "quantity": 150,
+        "rating": {
+            "rate": 4.7,
+            "count": 500
+         }
+      },
+      {
+        "id": 4,
+        "title": "Amoxicillin",
+        "description": "An antibiotic used to treat various bacterial infections.",
+        "image": "https://media.istockphoto.com/id/2096790710/photo/generic-box-and-amoxicillin-antibiotic-pills-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=ejtx1o7tcwKTt-65BN-t4EtbVILxHAhRI5gmqzzRPOg=",
+        "price": 12.99,
+        "quantity": 50,
+        "rating": {
+            "rate": 2.1,
+            "count": 430
+         }
+      },
+      {
+        "id": 5,
+        "title": "Metformin",
+        "description": "A medication used to control blood sugar levels in people with type 2 diabetes.",
+        "image": "https://media.istockphoto.com/id/1314019819/photo/lettering-on-pile-metformin-pills-background-medicine-indicated-for-the-treatment-of-diabetes.jpg?s=612x612&w=0&k=20&c=woz5GBp8JrBHymZjcz3mNZTw3rDLnMxsfYeU7hJEBt0=",
+        "price": 19.99,
+        "quantity": 120,
+        "rating": {
+            "rate": 4.6,
+            "count": 400
+         }
+      },
+      {
+        "id": 6,
+        "title": "Lisinopril",
+        "description": "A medication used to treat high blood pressure and heart failure.",
+        "image": "https://media.istockphoto.com/id/2192424187/photo/lisinopril-name-of-medicinal-treatment-of-diseases-to-lower-high-blood-pressure.jpg?s=612x612&w=0&k=20&c=NMIYoAY_PBPPK_dBHpLVkC9p8F0CdEKY8Geite3QL-0=",
+        "price": 9.99,
+        "quantity": 90,
+        "rating": {
+            "rate": 3.9,
+            "count": 70
+         }
+      },
+      {
+        "id": 7,
+        "title": "Simvastatin",
+        "description": "A statin drug used to control cholesterol levels and reduce the risk of heart disease.",
+        "image": "https://media.istockphoto.com/id/961233954/photo/simvastatin-concept.jpg?s=612x612&w=0&k=20&c=65ZJQaAiskezZFVMYHfrr9DS5hS_gkui10ExSyApqIY=",
+        "price": 14.99,
+        "quantity": 80,
+        "rating": {
+            "rate": 3.0,
+            "count": 300
+         }
+      },
+      {
+        "id": 8,
+        "title": "Cetirizine",
+        "description": "An antihistamine used to treat allergy symptoms like runny nose and sneezing.",
+        "image": "https://media.istockphoto.com/id/1172461597/photo/antihistamine-medication-or-allergy-drug-concept-photo-on-doctor-table-is-pack-with-word.webp?a=1&b=1&s=612x612&w=0&k=20&c=Iy4JN85a18fscS5uENd4Cxw-WfEp-iBigs4Cq4ltjpQ=",
+        "price": 6.99,
+        "quantity": 150,
+        "rating": {
+            "rate": 1.9,
+            "count": 100
+         }
+      },
+      {
+        "id": 9,
+        "title": "Omeprazole",
+        "description": "A medication used to treat gastroesophageal reflux disease (GERD) and stomach ulcers.",
+        "image": "https://media.istockphoto.com/id/2195341297/photo/omeprazole-name-of-medicinal-treatment-of-diseases-of-the-digestive-system.jpg?s=612x612&w=0&k=20&c=nKOjduMrMXiXCe_mDu3ssTaYCCKdHdio_ZOTg5wLwAU=",
+        "price": 8.49,
+        "quantity": 60,
+        "rating": {
+            "rate": 3.3,
+            "count": 470
+         }
+      },
+      {
+        "id": 10,
+        "title": "Prednisone",
+        "description": "A corticosteroid used to treat a variety of inflammatory conditions such as arthritis and asthma.",
+        "image": "https://media.istockphoto.com/id/1172213343/photo/corticosteroid-medication-or-drug-concept-photo-on-doctor-table-lies-open-packaging-labeled.jpg?s=612x612&w=0&k=20&c=XmA-chlQyh3PnHvU57rZ2O7eRIxaIixIfLmk1UK6daE=",
+        "price": 11.99,
+        "quantity": 30,
+        "rating": {
+            "rate": 4.9,
+            "count": 420
+         }
+      }
+
+]
+
+
+    
