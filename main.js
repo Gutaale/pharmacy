@@ -203,6 +203,7 @@ async function handleRegisterDrug(message) {
   // const message=document.getElementById('message');
   const title=document.getElementById('title').value.trim();
   const price=Number(document.getElementById('price').value.trim()); 
+  const category=document.getElementById('category').value.trim();
   const description=document.getElementById('description').value.trim();
   const image=document.getElementById('image').value.trim();
   const quantity=Number(document.getElementById('quantity').value.trim());
@@ -214,6 +215,10 @@ if(title=='' ||  title==null){
 if(price=='' ||  price==null){  
     message.textContent='Price is required'
     return
+}
+if(category=='' ||  category==null){
+    message.textContent='Category is required'
+    return;
 }
 if(description=='' ||  description==null){  
     message.textContent='Description is required'
@@ -236,6 +241,7 @@ if(!drug){
     let newDrug={
         id:drugs.length+1,
         title:title,
+        category:category,
         price:price,
         description:description,
         image:image,
@@ -447,11 +453,12 @@ function loadDataIntoTheTable(){
                   <input type="text" name="title" id="title" value="${drug.title}">
                   <input type="text" name="image" id="image" value="${drug.image}">
                   </div>
-                  <textarea name="description" id="description">${drug.description}</textarea>
                   <div class="form-group">
+                  <input type="text" name="category" id="category" placeholder="Enter Category" required>
                   <input type="text" name="price" id="price" value="${drug.price}" required>
                   <input type="text" name="quantity" id="quantity" value="${drug.quantity}" required>
                   </div>
+                  <textarea name="description" id="description">${drug.description}</textarea>
                   <input type="submit" class="btn" id="update-drug" value="Update Drug">
                 </form>
                 `
@@ -511,7 +518,8 @@ function updateDrug(message, drugid){
   message.textContent="Updated Successfully"
 
   const title=document.getElementById('title').value.trim();
-  const price=document.getElementById('price').value.trim(); 
+  const price=document.getElementById('price').value.trim();
+  const category=document.getElementById('category').value.trim(); 
   const description=document.getElementById('description').value.trim();
   const image=document.getElementById('image').value.trim();
   const quantity=document.getElementById('quantity').value.trim();
@@ -519,6 +527,7 @@ function updateDrug(message, drugid){
   const olddrugs=JSON.parse(localStorage.getItem('drugs')) || [];
   const drug=olddrugs.find((drug)=>drug.id==drugid);
   drug.title=title
+  drug.category=category
   drug.price=Number(price)
   drug.description=description
   drug.image=image

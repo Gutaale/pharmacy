@@ -30,7 +30,7 @@ body{
 }
 header{
     width: 100vw;
-    height: 16vh;
+    height: 15vh;
     padding: 0 10px;
     background-color: var(--color-white);
     margin-bottom: 15px;
