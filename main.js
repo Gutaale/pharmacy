@@ -454,7 +454,7 @@ function loadDataIntoTheTable(){
                   <input type="text" name="image" id="image" value="${drug.image}">
                   </div>
                   <div class="form-group">
-                  <input type="text" name="category" id="category" placeholder="Enter Category" required>
+                  <input type="text" name="category" id="category" value="${drug.category}" required>
                   <input type="text" name="price" id="price" value="${drug.price}" required>
                   <input type="text" name="quantity" id="quantity" value="${drug.quantity}" required>
                   </div>
