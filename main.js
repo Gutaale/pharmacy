@@ -5,17 +5,31 @@ const cardBody = document.querySelector('.card-body');
 const products = document.querySelector('.products');
 const cart=document.querySelector('.cart');
 const cartModel=document.querySelector('.cart-model');
-const cartClose=document.querySelector('.close');
+const cartClose=document.querySelector('#closeCart');
+const ModelClose=document.querySelector('#closeModel');
 let cartItems = document.querySelector(".cart-items");
 const adminDashboard=document.querySelector('.admin-dashboard'); //admin-dashboard
 const adminName=document.querySelector('#adminName');
-const inventory=document.querySelector('.inventory');
 const form=document.getElementById('drug-registration');
 const tableData=document.querySelector('#inventory-items');
 const addNewDrug=document.querySelector('#add-new-drug');
 const drugRegistrationModel=document.querySelector('.drug-registration-model')
-const btnRegister=document.getElementById('register-drug').value.trim();
+const btnRegister=document.getElementById('register-drug');
 const drugRegistrationContent=document.querySelector('.drug-registration-content')
+const dashboard =document.querySelector('.dashboard');
+const inventory=document.querySelector('.inventory');
+const dashboardLink=document.querySelector('#dashboard-link');
+const adminDashboardLink=document.querySelector('#dashboard');
+const inventoryLink=document.querySelector('#inventory-link');
+const adminInventoryLink=document.querySelector('#inventory');
+const customerLink=document.querySelector('#customer-link');
+const settingsLink=document.querySelector('#settings-link');
+const humbergerMenu=document.querySelector('.humberger');
+const mobileMenu=document.querySelector('#mobile-menu');
+const signinLink=document.querySelector('#signin-link');
+const signupLink=document.querySelector('#signup-link');
+
+
 
 // getDrugApi();
 getUsers();
@@ -23,6 +37,8 @@ countItemsInTheCart();
 let currentDrugs = [];
 let users=[];
 let drugs=[];
+adminDashboardLink;
+adminInventoryLink;
 
 window.addEventListener('DOMContentLoaded', () => {
   let drugs=JSON.parse(localStorage.getItem('drugs')) || [];
@@ -32,12 +48,82 @@ window.addEventListener('DOMContentLoaded', () => {
   getDrugApi();
   }
 });
+humbergerMenu.addEventListener('click', function(){
+  humbergerMenu.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+});
+    
 
+
+dashboardLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    dashboard.classList.add('active');
+    inventory.classList.remove('active');
+    drugRegistrationModel.classList.remove('active');
+
+    // customer.classList.remove('active');
+    // settings.classList.remove('active');
+});
+adminDashboardLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    dashboard.classList.add('active');
+    inventory.classList.remove('active');
+    drugRegistrationModel.classList.remove('active');
+})
+inventoryLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    dashboard.classList.remove('active');
+    inventory.classList.add('active');
+    drugRegistrationModel.classList.remove('active');
+
+    // customer.classList.remove('active');
+    // settings.classList.remove('active');
+});
+adminInventoryLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    dashboard.classList.remove('active');
+    inventory.classList.add('active');
+    drugRegistrationModel.classList.remove('active'); 
+});
+// customerLink.addEventListener('click', (e) => {
+//     e.preventDefault();  
+//     dashboard.classList.add('active');
+//     inventory.classList.remove('active');
+//     // customer.classList.add('active');
+//     // settings.classList.remove('active');
+// });
+ 
+signinLink.addEventListener('click', (e) => {
+  e.preventDefault();
+    if(signinLink.innerHTML=='Sign Out'){
+        products.style.display='grid';
+        adminDashboard.classList.remove('active');
+        inventory.classList.remove('active');
+        cart.style.display='flex'
+        signinLink.innerHTML='Sign In'
+        let drugs=JSON.parse(localStorage.getItem('drugs')) || [];
+        if(drugs){  
+          loadPrducts(drugs)      
+        }else{
+          getDrugApi();
+        }
+        return
+    } 
+    card.classList.add('active');
+    handleSignIn();
+});
+signupLink.addEventListener('click', (e) => {   
+    e.preventDefault();
+    card.classList.add('active');
+    handleSignup();
+});
 SignIn.addEventListener('click', (e) => {
     e.preventDefault();
     if(SignIn.innerHTML=='Sign Out'){
         products.style.display='grid';
         adminDashboard.classList.remove('active');
+        inventory.classList.remove('active');
+        cart.style.display='flex'
         SignIn.innerHTML='Sign In'
         let drugs=JSON.parse(localStorage.getItem('drugs')) || [];
         if(drugs){  
@@ -54,7 +140,6 @@ SignIn.addEventListener('click', (e) => {
 Signup.addEventListener('click', (e) => {   
     e.preventDefault();
     card.classList.add('active');
-    console.log('Sign up button clicked');
     handleSignup();
 });
 
@@ -70,23 +155,27 @@ cartClose.addEventListener('click', (e) => {
     closeCart()
  });  
 
+ ModelClose.addEventListener('click', (e) => {   
+    closeModel()
+ });
+ 
  form.addEventListener('submit', (e) => {  
     e.preventDefault();
     const message = document.getElementById('message-register');
     if(btnRegister.value=='Register Drug'){
       handleRegisterDrug(message); 
+      // return
     }else{
-      updateDrug(message)
+      // updateDrug(message)
     }
 
 
 });
 addNewDrug.addEventListener('click', (e) => {  
     e.preventDefault();   
-    const drugRegistraionModel=document.querySelector('.drug-registration-model'); 
-    const inventory=document.querySelector('.inventory');
-    inventory.style.display='none';
-    drugRegistraionModel.style.display='block';
+    // const inventory=document.querySelector('.inventory');
+    inventory.classList.remove('active');
+    drugRegistrationModel.classList.add('active');
   });
 
 window.onclick=function(event){
@@ -106,7 +195,10 @@ window.onclick=function(event){
 // Function to handle events
 
 
-
+function closeModel(){
+    drugRegistrationModel.classList.remove('active');
+    inventory.classList.add('active');
+}
 async function handleRegisterDrug(message) {
   // const message=document.getElementById('message');
   const title=document.getElementById('title').value.trim();
@@ -140,8 +232,7 @@ let drugs=JSON.parse(localStorage.getItem('drugs')) || [];
 let drug=drugs.find(drug=>drug.title==title); 
 
 
-if(drug){
-    message.textContent='Drug already exists'      
+if(!drug){
     let newDrug={
         id:drugs.length+1,
         title:title,
@@ -155,12 +246,16 @@ if(drug){
     message.style.color='green'
     message.textContent='Successfully Registered'
     console.log('message',message)
-    closeCard(); 
+    // drugRegistrationModel.classList.remove('active');
+    // inventory.classList.add('active');
+    closeModel()
+    loadDataIntoTheTable()
+    // closeCard(); 
+}else{
+  message.textContent='Drug already exists'      
 }
 
 }
-
-
 
 function handleSignup() {
     cardBody.innerHTML='';
@@ -289,11 +384,15 @@ function processSignIn(message){
           closeCard()
           products.style.display='none';
           adminDashboard.classList.add('active');
-          inventory.classList.add('active');
+          // inventory.classList.add('active');
+          dashboard.classList.add('active')
           adminName.innerHTML=`${user.first_name} ${user.last_name}`
+          cart.style.display='none';
           loadDataIntoTheTable()
             
           SignIn.innerHTML='Sign Out'
+          signinLink.innerHTML='Sign Out'
+
         },1000)
       }
       
@@ -309,12 +408,12 @@ function processSignIn(message){
 }
 function loadDataIntoTheTable(){
   let drugs=JSON.parse(localStorage.getItem('drugs')) || [];
-          const newDrug=drugs.map(({id,title,description,price,quantity})=>{
-            return `]
+          const newDrug=drugs.map(({id,title,category,price,quantity})=>{
+            return `
               <tr>    
               <td>${id}</td>
               <td>${title}</td>
-              <td>${description}</td>
+              <td>${category}</td>
               <td>${price}</td>
               <td>${quantity}</td>
               <td>
@@ -340,6 +439,7 @@ function loadDataIntoTheTable(){
                 inventory.classList.remove('active');
                 drugRegistrationModel.classList.add('active')
                 drugRegistrationContent.innerHTML=`
+                <button class="close" id="closeUpdateModel"><i class="fa fa-close"></i></button>
                 <h2>Updat Drug</h2>
                 <form id="drug-update">
                   <p id="message-register"></p>
@@ -355,9 +455,16 @@ function loadDataIntoTheTable(){
                   <input type="submit" class="btn" id="update-drug" value="Update Drug">
                 </form>
                 `
+                const closeUpdateModel=document.querySelector('#closeUpdateModel');
+                closeUpdateModel.addEventListener('click', (e) => {   
+                  e.preventDefault();  
+                  closeModel()
+                });
+
                 const btnUpdate=document.querySelector('#update-drug')
                 const message=document.querySelector('#message')
                 btnUpdate.addEventListener('click', (e)=>{
+                  e.preventDefault()
                   updateDrug(message, id)
                 })
             })
@@ -420,6 +527,8 @@ function updateDrug(message, drugid){
   console.log(title.value)
   console.log('drugs',olddrugs)
   localStorage.setItem('drugs',JSON.stringify(olddrugs))
+  inventory.classList.add('active');
+  drugRegistrationModel.classList.remove('active')
   loadDataIntoTheTable();
 }
 

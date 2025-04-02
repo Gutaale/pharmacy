@@ -14,14 +14,28 @@
             <img src="assets/images/1.png" alt="logo">
             <h1> Abaal Pharmacy</h1>
         </div>
+        <div class="humberger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="mobile-menu">
+            <a href="#" class="menu-links" id="dashboard-link">Dashboard</a>
+            <a href="#" class="menu-links" id="inventory-link"></i> Inventory</a>
+            <a href="#" class="menu-links" id="customers-link"> Customers</a>
+            <a href="#" class="menu-links" id="settings-link"> Settings</a>
+            <a href="#" id="signin" class="menu-links btn">Sing In</a>
+            <a href="#" id="signup" class="menu-links btn">Sing Up</a>
+            
+        </div>
 <nav class="navbar">
     <ul class="menu">
         <li class="cart"><a href="#">
             <i class="fa fa-shopping-cart"></i>
             <span id="cartCount">0</span>
         </li>
-        <li ><a href="#" id="signin" class="btn">Sing In</a></li>
-        <li ><a href="#" id="signup" class="btn">Sing Up</a></li>
+        <li ><a href="#" id="signin-link" class="btn">Sing In</a></li>
+        <li ><a href="#" id="signup-link" class="btn">Sing Up</a></li>
     </ul>
 </nav>
 </div>
@@ -38,7 +52,7 @@
             <div class="cart-model">
                 <div class="cart-content">
                     <div class="cart-header">
-                        <button class="close"><i class="fa fa-close"></i></button>
+                        <button class="close" id="closeCart"><i class="fa fa-close"></i></button>
                         <h2>Your Cart</h2>
                     </div>
                     
@@ -65,16 +79,19 @@
                 <p class="text-muted">@admin</p>
             </div>
         </a>
-        <a href="#" class="menu-links"><span><i class="fa-solid fa-gauge"></i> Dashboard</span></a>
-        <a href="#" class="menu-links"><span><i class="fa fa-list-ul"></i> Inventory</span></a>
-        <a href="#" class="menu-links"><span><i class="fa fa-users"></i> Customers</span></a>
+        <a href="#" class="menu-links" id="dashboard"><span class="first"><i class="fa-solid fa-gauge" ></i> <span>Dashboard</span></span></a>
+        <a href="#" class="menu-links" id="inventory"><span class="first"><i class="fa fa-list-ul" ></i> <span>Inventory</span></span></a>
+        <a href="#" class="menu-links" id="customers"><span class="first"><i class="fa fa-users"></i><span>Customers</span> </span></a>
         <!-- <a href="#" class="menu-links"><span><i class="fa fa-shopping-bag"></i> Orders</span></a>
         <a href="#" class="menu-links"><span><i class="fa fa-chart-line"></i> Sales Reports</span></a> -->
-        <a href="#" class="menu-links"><span><i class="fa fa-gear"></i> Settings</span></a>
+        <a href="#" class="menu-links" id="settings"><span class="first"><i class="fa fa-gear"></i><span>Settings</span> </span></a>
     </div>
     <div class="right-side">
-        <!-- <h2>Welcome to the Admin Dashboard</h2>
-        <p>Manage your pharmacy inventory, customers, orders, and sales reports.</p> -->
+        <div class="dashboard">
+        <h2>Welcome to the Admin Dashboard</h2>
+        <p>Manage your pharmacy inventory, customers, orders, and sales reports.</p>
+        </div>
+
         <div class="inventory">
                 <div class="inventory-items">
                     <div class="inventory-item">
@@ -85,7 +102,7 @@
                                 <tr>
                                 <th>ID</th>
                                 <th>Title</th>
-                                <th>Description</th>
+                                <th>Category</th>
                                 <th>Price</th>
                                 <th>Quantity</th>  
                                 <th>Actions</th>  
@@ -103,7 +120,7 @@
     </div>
     <div class="drug-registration-model">
         <div class="drug-registration-content">
-            <button class="close"><i class="fa fa-close"></i></button>
+            <button class="close" id="closeModel"><i class="fa fa-close"></i></button>
             <h2>Drug Registration</h2>
             <form id="drug-registration">
                 <p id="message-register"></p>
