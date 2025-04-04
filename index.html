@@ -97,48 +97,68 @@
                     <div class="inventory-item">
                         <a href="" class="btn" id="add-new-drug">Add new Drug</a>
                         <div class="scrollable-table">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                <th>ID</th>
-                                <th>Title</th>
-                                <th>Category</th>
-                                <th>Price</th>
-                                <th>Quantity</th>  
-                                <th>Actions</th>  
-                                </tr>
-                            </thead>
-                            <tbody id="inventory-items">
-                                <!-- Inventory items goes here -->  
-                            </tbody>
-                                
-                        </table>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>  
+                                    <th>Actions</th>  
+                                    </tr>
+                                </thead>
+                                <tbody id="inventory-items">
+                                    <!-- Inventory items goes here -->  
+                                </tbody>
+                                    
+                            </table>
 
+                         </div>
                     </div>
-                    </div>
+                </div>
+        
         </div>
-    </div>
-    <div class="drug-registration-model">
-        <div class="drug-registration-content">
-            <button class="close" id="closeModel"><i class="fa fa-close"></i></button>
-            <h2>Drug Registration</h2>
-            <form id="drug-registration">
-                <p id="message-register"></p>
-                <div class="form-group">
-                <input type="text" name="title" id="title" placeholder="Enter Drug Title" required>
-                <input type="text" name="image" id="image" placeholder="Enter image address" required>
-                </div>
-                <div class="form-group">
-                <input type="text" name="category" id="category" placeholder="Enter Category" required>
-                <input type="text" name="price" id="price" placeholder="Enter Price" required>
-                <input type="text" name="quantity" id="quantity" placeholder="Enter quantity" required>
-                </div>
-                <textarea name="description" id="description" placeholder="Enter Description" required></textarea>
+        <div class="customers">
+            <div class="customers-scrolleble">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Role</th>  
+                        </tr>
+                    </thead>
+                    <tbody id="customers-list">
+                        <!-- Customers list goes here -->
+                    </tbody>
+                </table>
+            </div>
+           
+        </div>
+        <div class="drug-registration-model">
+            <div class="drug-registration-content">
+                <button class="close" id="closeModel"><i class="fa fa-close"></i></button>
+                <h2>Drug Registration</h2>
+                <form id="drug-registration">
+                    <p id="message-register"></p>
+                    <div class="form-group">
+                    <input type="text" name="title" id="title" placeholder="Enter Drug Title" required>
+                    <input type="text" name="image" id="image" placeholder="Enter image address" required>
+                    </div>
+                    <div class="form-group">
+                    <input type="text" name="category" id="category" placeholder="Enter Category" required>
+                    <input type="text" name="price" id="price" placeholder="Enter Price" required>
+                    <input type="text" name="quantity" id="quantity" placeholder="Enter quantity" required>
+                    </div>
+                    <textarea name="description" id="description" placeholder="Enter Description" required></textarea>
 
-                <input type="submit" class="btn" id="register-drug" value="Register Drug">
-            </form>
+                    <input type="submit" class="btn" id="register-drug" value="Register Drug">
+                </form>
+            </div>
         </div>
-    </div>
 </div>
 
 

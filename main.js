@@ -18,16 +18,20 @@ const btnRegister=document.getElementById('register-drug');
 const drugRegistrationContent=document.querySelector('.drug-registration-content')
 const dashboard =document.querySelector('.dashboard');
 const inventory=document.querySelector('.inventory');
+const customers=document.querySelector('.customers');
 const dashboardLink=document.querySelector('#dashboard-link');
 const adminDashboardLink=document.querySelector('#dashboard');
 const inventoryLink=document.querySelector('#inventory-link');
 const adminInventoryLink=document.querySelector('#inventory');
-const customerLink=document.querySelector('#customer-link');
+const customerLink=document.querySelector('#customers-link');
+const adminCustomerLink=document.querySelector('#customers');
 const settingsLink=document.querySelector('#settings-link');
 const humbergerMenu=document.querySelector('.humberger');
 const mobileMenu=document.querySelector('#mobile-menu');
 const signinLink=document.querySelector('#signin-link');
 const signupLink=document.querySelector('#signup-link');
+const customersList=document.querySelector('#customers-list');
+
 
 
 
@@ -59,6 +63,7 @@ dashboardLink.addEventListener('click', (e) => {
     e.preventDefault();
     dashboard.classList.add('active');
     inventory.classList.remove('active');
+    customers.classList.remove('active');
     drugRegistrationModel.classList.remove('active');
 
     // customer.classList.remove('active');
@@ -68,12 +73,14 @@ adminDashboardLink.addEventListener('click', (e) => {
     e.preventDefault();
     dashboard.classList.add('active');
     inventory.classList.remove('active');
+    customers.classList.remove('active');
     drugRegistrationModel.classList.remove('active');
 })
 inventoryLink.addEventListener('click', (e) => {
     e.preventDefault();
     dashboard.classList.remove('active');
     inventory.classList.add('active');
+    customers.classList.remove('active');
     drugRegistrationModel.classList.remove('active');
 
     // customer.classList.remove('active');
@@ -81,17 +88,27 @@ inventoryLink.addEventListener('click', (e) => {
 });
 adminInventoryLink.addEventListener('click', (e) => {
     e.preventDefault();
+
     dashboard.classList.remove('active');
     inventory.classList.add('active');
+    customers.classList.remove('active');
     drugRegistrationModel.classList.remove('active'); 
 });
-// customerLink.addEventListener('click', (e) => {
-//     e.preventDefault();  
-//     dashboard.classList.add('active');
-//     inventory.classList.remove('active');
-//     // customer.classList.add('active');
-//     // settings.classList.remove('active');
-// });
+adminCustomerLink.addEventListener('click', (e) => {
+    e.preventDefault();  
+    dashboard.classList.remove('active');
+    inventory.classList.remove('active');
+    customers.classList.add('active');
+    loadUsersIntoTheTable();
+});
+
+customerLink.addEventListener('click', (e) => {
+    e.preventDefault();  
+    dashboard.classList.remove('active');
+    inventory.classList.remove('active');
+    customers.classList.add('active');
+    loadUsersIntoTheTable();
+});
  
 signinLink.addEventListener('click', (e) => {
   e.preventDefault();
@@ -194,7 +211,21 @@ window.onclick=function(event){
 
 // Function to handle events
 
-
+function loadUsersIntoTheTable(){
+  const users=JSON.parse(localStorage.getItem('users')) || []
+    const userData=users.map(user=>{
+                     return `
+                                <tr>
+                                  <td>${user.id}</td>
+                                  <td>${user.first_name}</td>
+                                  <td>${user.last_name}</td>
+                                  <td>${user.email}</td>
+                                  <td>${user.role}</td>  
+                                </tr>        
+                       `
+    }).join('');
+    customersList.innerHTML=userData;
+}
 function closeModel(){
     drugRegistrationModel.classList.remove('active');
     inventory.classList.add('active');
@@ -332,13 +363,14 @@ function processSignup(message){
       last_name:lastName,
       email:email,
       password:password,
-      role:'user'
+      role:'Customer'
   }
   users.push(newUser);
   localStorage.setItem('users',JSON.stringify(users));
   message.style.color='green'
   message.textContent='Successfully Registered'
   closeCard(); 
+  loadUsersIntoTheTable();
 
 }
 
