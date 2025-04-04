@@ -423,10 +423,12 @@ function processSignIn(message){
           products.style.display='none';
           adminDashboard.classList.add('active');
           // inventory.classList.add('active');
+          customers.classList.remove('active');
           dashboard.classList.add('active')
           adminName.innerHTML=`${user.first_name} ${user.last_name}`
           cart.style.display='none';
           loadDataIntoTheTable()
+          loadUsersIntoTheTable()
             
           SignIn.innerHTML='Sign Out'
           signinLink.innerHTML='Sign Out'
