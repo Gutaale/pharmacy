@@ -76,7 +76,7 @@ adminDashboardLink.addEventListener('click', (e) => {
 logOut.addEventListener('click', (e) => {
     e.preventDefault();
     localStorage.removeItem('onlineUser');
-    window.location.href='index.html';
+    window.location.href='../index.html';
 });
 // inventoryLink.addEventListener('click', (e) => {
 //     e.preventDefault();
