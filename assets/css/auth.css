@@ -1,0 +1,119 @@
+.auth{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: url("https://plus.unsplash.com/premium_photo-1661769786626-8025c37907ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBoYXJtYWN5fGVufDB8fDB8fHww") no-repeat center center/cover;
+}
+.login-card.active{
+    display: none;
+}
+.login-card{
+    /* margin: 20px auto; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#login-form{
+    width: 30%;
+    height: fit-content;
+    margin: calc(10% - 20px ) auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#login-form h1{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--light-gray);
+}
+#login-form input{
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+#login-form .new-user{
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--light-gray);
+}
+
+#login-form #switch-form{
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 5px;
+    color: var(--blue);
+}
+#login-form #switch-form:hover{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--light-gray);
+}
+#login-form .btn{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--light-gray);
+    background: var(--blue);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+#login-form .btn:hover{
+    opacity: .5;
+}
+#login-form #firstName, #lastName, #confirmPassword{
+    display:none;
+}
+
+@media (max-width: 481px) {
+    
+    
+        #login-form{
+            width: 80%;
+            margin: calc(40% - 20px ) auto;
+    }
+}
+
+    @media (min-width: 482px) and (max-width: 768px) {
+  
+        #login-form{
+            width: 80%;
+            margin: calc(40% - 20px ) auto;
+
+    }
+    #login-form input{
+        width: 90%;
+        padding: 20px;
+        margin-top: 20px;
+       
+        
+    }
+}
+    @media (min-width: 768px) and (max-width: 1024px){
+        #login-form{
+            width: 80%;
+            margin: calc(40% - 20px ) auto;
+    }
+    #login-form input{
+        width: 90%;
+        padding: 20px;
+        margin-top: 20px;
+       
+        
+    }
+        
+}
