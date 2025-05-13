@@ -30,9 +30,9 @@ function getHeader(){
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a> </li>
                 <li><a href="index.html#contact">Contact</a> </li>
-                <li><a href="products.html">Products</a> </li>
+                <li><a href="../html/products.html">Products</a> </li>
                 <li><a href="auth.html" id="signin-link" class="btn">logIn</a></li>
-                <li ><a class="cart" href="shoppingCart.html">
+                <li ><a class="cart" href="../html/shoppingCart.html">
                     <i class="fa fa-shopping-cart"></i>
                     <span id="cartCount">0</span>
                 </a>
