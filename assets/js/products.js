@@ -1,5 +1,7 @@
 const products =document.querySelector('.products')
-
+const index =document.querySelector('#index')
+const about =document.querySelector('#about1') 
+const contact =document.querySelector('#contact1')
 
 // getDrugApi()
 
@@ -10,6 +12,18 @@ let currentDrugs = [];
 let users=[];
 let drugs=[];
 
+about.addEventListener('click', (e)=>{
+    e.preventDefault();
+    window.location.href='../index.html#about';
+})
+index.addEventListener('click', (e)=>{
+    e.preventDefault();
+    window.location.href='../index.html';
+})
+contact.addEventListener('click', (e)=>{
+    e.preventDefault();
+    window.location.href='../index.html#contact';
+})
 
 window.addEventListener('DOMContentLoaded', () => {
     let drugs=JSON.parse(localStorage.getItem('drugs')) || [];

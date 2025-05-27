@@ -27,9 +27,9 @@ function getHeader(){
                     <span></span>
                 </div>
             <ul class="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a> </li>
-                <li><a href="index.html#contact">Contact</a> </li>
+                <li><a href="index.html" id="index">Home</a></li>
+                <li><a href="index.html#about" id="about1" >About</a> </li>
+                <li><a href="index.html#contact" id="contact1">Contact</a> </li>
                 <li><a href="../html/products.html">Products</a> </li>
                 <li><a href="../html/auth.html" id="signin-link" class="btn">logIn</a></li>
                 <li ><a class="cart" href="../html/shoppingCart.html">
