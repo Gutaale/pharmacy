@@ -63,7 +63,7 @@ function loadPrducts(product_list){
       return `<div class="product-items">
           <img src="${image}" alt="Products">
             <h3>${title}</h3>
-            <p>${description}</p>
+             <p>${description}</p>
             <span>Price: $${price}</span>
             <P>In Stock: ${quantity}</P>
             <button class="btn add-to-cart" data-id="${id}">Add to Cart</button>
