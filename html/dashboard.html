@@ -11,110 +11,107 @@
     <title>Pharmacy Management System</title>
 </head>
 <body>
-    
-
     <div class="container">
         <div class="humberger">
             <span></span>
             <span></span>
             <span></span>
         </div>
-
-    <div class="admin-dashboard">
-        <div class="left-side">
-            
-            <a class="profile">
-                <div class="profile-photo">
-                    <img src="/assets/images/profile1.jpg" alt="Admin Profile">
-                </div>
-                <div class="handle">
-                    <h4 id="adminName">Admin Name</h4>
-                    <p class="text-muted">@admin</p>
-                </div>
-            </a>
-                <a href="#" class="menu-links" id="dashboard"><span class="first"><i class="fa-solid fa-gauge" ></i> <span>Dashboard</span></span></a>
-                <a href="#" class="menu-links" id="inventory"><span class="first"><i class="fa fa-list-ul" ></i> <span>Inventory</span></span></a>
-                <a href="#" class="menu-links" id="customers"><span class="first"><i class="fa fa-users"></i><span>Customers</span> </span></a>
-                <!-- <a href="#" class="menu-links"><span><i class="fa fa-shopping-bag"></i> Orders</span></a>
-                <a href="#" class="menu-links"><span><i class="fa fa-chart-line"></i> Sales Reports</span></a> -->
-                <!-- <a href="#" class="menu-links" id="settings"><span class="first"><i class="fa fa-gear"></i><span>Settings</span> </span></a> -->
-                <a href="#" class="menu-links" id="log-out"><span class="first"><i class="fa-solid fa-right-from-bracket"></i><span>Log out</span> </span></a>
-            </div>
-            
-        <div class="right-side">
-            <div class="dashboard">
-            <h2>Welcome to the Admin Dashboard</h2>
-            <p>Manage your pharmacy inventory, customers, orders, and sales reports.</p>
-            </div>
-    
-            <div class="inventory">
-                    <div class="inventory-items">
-                        <div class="inventory-item">
-                            <a href="" class="btn" id="add-new-drug">Add new Drug</a>
-                            <div class="scrollable-table">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                        <th>ID</th>
-                                        <th>Title</th>
-                                        <th>Category</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>  
-                                        <th>Actions</th>  
-                                        </tr>
-                                    </thead>
-                                    <tbody id="inventory-items">
-                                        <!-- Inventory items goes here -->  
-                                    </tbody>
-                                        
-                                </table>
-    
-                             </div>
-                        </div>
+        <div class="admin-dashboard">
+            <div class="left-side">
+                
+                <a class="profile">
+                    <div class="profile-photo">
+                        <img src="/assets/images/profile1.jpg" alt="Admin Profile">
                     </div>
-            
-            </div>
-            <div class="customers">
-                <div class="customers-scrolleble">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Email</th>
-                                <th>Role</th>  
-                            </tr>
-                        </thead>
-                        <tbody id="customers-list">
-                            <!-- Customers list goes here -->
-                        </tbody>
-                    </table>
+                    <div class="handle">
+                        <h4 id="adminName">Admin Name</h4>
+                        <p class="text-muted">@admin</p>
+                    </div>
+                </a>
+                    <a href="#" class="menu-links" id="dashboard"><span class="first"><i class="fa-solid fa-gauge" ></i> <span>Dashboard</span></span></a>
+                    <a href="#" class="menu-links" id="inventory"><span class="first"><i class="fa fa-list-ul" ></i> <span>Inventory</span></span></a>
+                    <a href="#" class="menu-links" id="customers"><span class="first"><i class="fa fa-users"></i><span>Customers</span> </span></a>
+                    <!-- <a href="#" class="menu-links"><span><i class="fa fa-shopping-bag"></i> Orders</span></a>
+                    <a href="#" class="menu-links"><span><i class="fa fa-chart-line"></i> Sales Reports</span></a> -->
+                    <!-- <a href="#" class="menu-links" id="settings"><span class="first"><i class="fa fa-gear"></i><span>Settings</span> </span></a> -->
+                    <a href="#" class="menu-links" id="log-out"><span class="first"><i class="fa-solid fa-right-from-bracket"></i><span>Log out</span> </span></a>
                 </div>
-               
-            </div>
-            <div class="drug-registration-model">
-                <div class="drug-registration-content">
-                    <button class="close" id="closeModel"><i class="fa fa-close"></i></button>
-                    <h2 id="form-title">Drug Registration</h2>
-                    <form id="drug-registration" class="form">
-                        <p class="message-register"></p>
-                        <div class="form-group">
-                        <input type="text" name="title" id="title" placeholder="Enter Drug Title" required>
-                        <input type="text" name="image" id="image" placeholder="Enter image address" required>
+                
+            <div class="right-side">
+                <div class="dashboard">
+                <h2>Welcome to the Admin Dashboard</h2>
+                <p>Manage your pharmacy inventory, customers, orders, and sales reports.</p>
+                </div>
+        
+                <div class="inventory">
+                        <div class="inventory-items">
+                            <div class="inventory-item">
+                                <a href="" class="btn" id="add-new-drug">Add new Drug</a>
+                                <div class="scrollable-table">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                            <th>ID</th>
+                                            <th>Title</th>
+                                            <th>Category</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>  
+                                            <th>Actions</th>  
+                                            </tr>
+                                        </thead>
+                                        <tbody id="inventory-items">
+                                            <!-- Inventory items goes here -->  
+                                        </tbody>
+                                            
+                                    </table>
+        
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                        <input type="text" name="category" id="category" placeholder="Enter Category" required>
-                        <input type="text" name="price" id="price" placeholder="Enter Price" required>
-                        <input type="text" name="quantity" id="quantity" placeholder="Enter quantity" required>
-                        </div>
-                        <textarea name="description" id="description" placeholder="Enter Description" required></textarea>
-                        <input type="submit" class="btn" id="register-drug" value="Register Drug">
-                    </form>
+                
+                </div>
+                <div class="customers">
+                    <div class="customers-scrolleble">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>  
+                                </tr>
+                            </thead>
+                            <tbody id="customers-list">
+                                <!-- Customers list goes here -->
+                            </tbody>
+                        </table>
+                    </div>
+                
+                </div>
+                <div class="drug-registration-model">
+                    <div class="drug-registration-content">
+                        <button class="close" id="closeModel"><i class="fa fa-close"></i></button>
+                        <h2 id="form-title">Drug Registration</h2>
+                        <form id="drug-registration" class="form">
+                            <p class="message-register"></p>
+                            <div class="form-group">
+                            <input type="text" name="title" id="title" placeholder="Enter Drug Title" required>
+                            <input type="text" name="image" id="image" placeholder="Enter image address" required>
+                            </div>
+                            <div class="form-group">
+                            <input type="text" name="category" id="category" placeholder="Enter Category" required>
+                            <input type="text" name="price" id="price" placeholder="Enter Price" required>
+                            <input type="text" name="quantity" id="quantity" placeholder="Enter quantity" required>
+                            </div>
+                            <textarea name="description" id="description" placeholder="Enter Description" required></textarea>
+                            <input type="submit" class="btn" id="register-drug" value="Register Drug">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
     </div>
     <script src="../assets/js/dashboard.js"></script>

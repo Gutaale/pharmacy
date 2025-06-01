@@ -59,12 +59,13 @@ async function getDrugApi(){
 function loadPrducts(product_list){
     currentDrugs=product_list;
     console.log(product_list)
-    const newProducts = product_list.map(({ title, price, image, description, id }) => {
+    const newProducts = product_list.map(({ title, price, image, description, id,quantity }) => {
       return `<div class="product-items">
           <img src="${image}" alt="Products">
             <h3>${title}</h3>
             <p>${description}</p>
             <span>Price: $${price}</span>
+            <P>In Stock: ${quantity}</P>
             <button class="btn add-to-cart" data-id="${id}">Add to Cart</button>
         </div>
       `}).join("");

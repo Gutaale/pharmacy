@@ -254,6 +254,7 @@ function loadUsersIntoTheTable(){
   
                   console.log(drugRegistrationModel)
                   // tableData.style.display='none';
+                  message.textContent='';
                   inventory.classList.remove('active');
                   drugRegistrationModel.classList.add('active')
                   const formTitle=document.querySelector('#form-title');
