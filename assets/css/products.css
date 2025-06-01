@@ -1,3 +1,4 @@
+@import 'common.css';
 .products{
     /* height: 100vh; */
     display: grid;
@@ -40,7 +41,7 @@
     border-radius: 10px;
 }
 .products .product-items .btn{
-    background: var(--dark-blue);
+    background: var(--Midnight-Blue);
     color: var(--light-gray);
 }
 

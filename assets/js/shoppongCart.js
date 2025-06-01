@@ -2,6 +2,7 @@
 let cartItems = document.querySelector(".cart-items");
 const cartClose=document.querySelector('#closeCart');
 const cartModel=document.querySelector('.cart-model');
+const checkOutBtn = document.querySelector("#checkout");
 
 
 
@@ -21,7 +22,25 @@ window.onclick=function(event){
     }
   
   }
-
+checkOutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let drugs= JSON.parse(localStorage.getItem("drugs")) || [];
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+  
+    // Here you can implement the checkout logic, like redirecting to a payment page
+    alert("Proceeding to checkout...");
+    // For now, we will just clear the cart
+    localStorage.removeItem("cart");
+    // renderCart();
+    setTimeout(() => {
+      alert("Thank you for your purchase!");
+      closeCart();
+    }, 1000);
+  }); 
 function renderCart() {
     let cart = JSON.parse(localStorage.getItem("cart"));
     console.log('cart',cart);
