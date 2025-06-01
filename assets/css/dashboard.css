@@ -296,8 +296,6 @@
         font-weight: 700;
         color: var(--Midnight-Blue);
         padding : 0px 40px;
-        /* text-align: center; */
-        /* text-align: left; */
     }
     .admin-dashboard .right-side .drug-registration-model .drug-registration-content .close{
         position: absolute;
@@ -366,7 +364,6 @@
         color: var(--color-dark);   
         padding: 30px 10px;
         outline: none;
-        
     }
    
 
