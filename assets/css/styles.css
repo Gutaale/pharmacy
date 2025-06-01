@@ -267,13 +267,16 @@ section .container{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background: var(--white-color);
+    background: var(--blue);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease-in-out;
-
 }
+#about .services .mission-vision .mission h2, #about .services .mission-vision .mission p{
+    color: var(--white-color);
+}
+
 #about .services .mission-vision .vision{
     width: 50%;
     display: flex;
