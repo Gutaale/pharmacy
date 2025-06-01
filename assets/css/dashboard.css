@@ -208,7 +208,7 @@
     padding: 10px;
 }
 .admin-dashboard .inventory .scrollable-table{
-    width: min(95%, 1120px);
+    width: min(98%, 1120px);
     height: 70vh;
     margin-top: 10px;
     margin-inline:auto; 
