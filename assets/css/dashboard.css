@@ -173,7 +173,7 @@
 .admin-dashboard .right-side h2{
     font-size: 2rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--Midnight-Blue);
 }
 .admin-dashboard .right-side p{
     font-size: 1.2rem;
@@ -294,7 +294,9 @@
     .admin-dashboard .right-side .drug-registration-model h2{
         font-size: 1.5rem;
         font-weight: 700;
-        color: var(--color-primary);
+        color: var(--Midnight-Blue);
+        padding : 0px 40px;
+        /* text-align: center; */
         /* text-align: left; */
     }
     .admin-dashboard .right-side .drug-registration-model .drug-registration-content .close{
@@ -303,8 +305,9 @@
         right: 10px;
         border: none;
         font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--color-primary);
+        font-weight: 900;
+        color: var(--Midnight-Blue);
+        background: transparent;
         cursor: pointer;
         padding: 5px;
     }
@@ -324,11 +327,12 @@
         width: 90%;
         padding: 15px;
         margin: 5px 0;
-        border: 1px solid var(--color-gray);
-        border-radius: 5px;
+        border: 1px solid var(--Midnight-Blue);
+        border-radius: 10px;
         font-size: 1rem;
         font-weight: 500;
         color: var(--color-dark);
+        outline: none;
     }
     #drug-update input{
         width: 90%;
@@ -355,12 +359,14 @@
         width: 90%;
         padding: 15px;
         margin: 5px 0;
-        border: 1px solid var(--color-gray);
-        border-radius: 5px;
+        border: 1px solid var(--Midnight-Blue);
+        border-radius: 10px;
         font-size: 1rem;
         font-weight: 500;
         color: var(--color-dark);   
         padding: 30px 10px;
+        outline: none;
+        
     }
    
 
