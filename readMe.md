@@ -15,8 +15,7 @@ This project aims to develop a web-based application that automates the process 
 - **Admin Dashboard**: Manage inventory, customers, orders, and sales reports.
 - **Responsive Design**: Optimized for both desktop and mobile devices.
 - **User Authentication**: Sign-in and sign-up functionality for admin access.
-- **Inventory Management**: Add, update, and view drugs in the inventory.
-
+- **Inventory Management**: Add, update, and view drugs in the inventory. 
 ## Technologies Used
 
 - **Frontend**: HTML, CSS (with responsive design),JavaScript
