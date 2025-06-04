@@ -112,11 +112,13 @@ function fetctCategories() {
     if (drugs.length === 0) {
         getDrugApi();
         return;
+    }else{
+        categories.innerHTML = `<option value="all">All Categories</option>`;
+        categories.innerHTML += drugs
+            .map((product) => `<option value="${product.category}">${product.category}</option>`)
+            .filter((value, index, self) => self.indexOf(value) === index) // Remove duplicates
+            .join("");
     }
-    categories.innerHTML += drugs
-        .map((product) => `<option value="${product.category}">${product.category}</option>`)
-        .filter((value, index, self) => self.indexOf(value) === index) // Remove duplicates
-        .join("");
 }
 function searchProducts() {
     const searchTerm = searchInput.value.toLowerCase().trim();
