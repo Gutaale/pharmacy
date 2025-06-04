@@ -2,6 +2,9 @@ const products =document.querySelector('.products')
 const index =document.querySelector('#index')
 const about =document.querySelector('#about1') 
 const contact =document.querySelector('#contact1')
+const searchInput = document.querySelector('#searchInput');
+const searchButton = document.querySelector('#searchButton');
+const categories = document.querySelector('#categories');
 
 // getDrugApi()
 
@@ -16,6 +19,24 @@ about.addEventListener('click', (e)=>{
     e.preventDefault();
     window.location.href='../index.html#about';
 })
+categories.addEventListener('change', (e) => {
+    e.preventDefault();
+    filterByCategory();
+});
+searchInput.addEventListener('keyup', (e) => {
+    e.preventDefault();
+    if (searchInput.value === '' || searchInput.value === null) {
+        if (drugs.length > 0) {
+            loadPrducts(drugs);
+            return;
+        }else {
+            getDrugApi();
+            return;
+        }
+        
+    }
+    searchProducts();
+});
 index.addEventListener('click', (e)=>{
     e.preventDefault();
     window.location.href='../index.html';
@@ -29,6 +50,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let drugs=JSON.parse(localStorage.getItem('drugs')) || [];
     if(drugs.length>0){
       loadPrducts(drugs)
+      fetctCategories();
       console.log('There is a drugs')
     }else{  
     getDrugApi();
@@ -50,6 +72,7 @@ async function getDrugApi(){
         localStorage.setItem('drugs',JSON.stringify(data))
         console.log(data)
         loadPrducts(data)
+        fetctCategories()
     } catch (error) {
         console.log(error)
     }
@@ -59,17 +82,20 @@ async function getDrugApi(){
 function loadPrducts(product_list){
     currentDrugs=product_list;
     console.log(product_list)
-    const newProducts = product_list.map(({ title, price, image, description, id,quantity }) => {
+    const newProducts = product_list.map(({ title, price, image, description,category, id,quantity }) => {
       return `<div class="product-items">
           <img src="${image}" alt="Products">
             <h3>${title}</h3>
-             <p>${description}</p>
+            <p>${description}</p>
+            <h4>Category: ${category}</h4>
             <span>Price: $${price}</span>
             <P>In Stock: ${quantity}</P>
             <button class="btn add-to-cart" data-id="${id}">Add to Cart</button>
         </div>
       `}).join("");
     products.innerHTML=newProducts;
+
+      
 
     products.querySelectorAll(".add-to-cart").forEach((button) => {
         button.addEventListener("click", () => {
@@ -81,6 +107,41 @@ function loadPrducts(product_list){
       });
 }
 
+function fetctCategories() {
+    let drugs = JSON.parse(localStorage.getItem('drugs')) || [];
+    if (drugs.length === 0) {
+        getDrugApi();
+        return;
+    }
+    categories.innerHTML += drugs
+        .map((product) => `<option value="${product.category}">${product.category}</option>`)
+        .filter((value, index, self) => self.indexOf(value) === index) // Remove duplicates
+        .join("");
+}
+function searchProducts() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const filteredDrugs = currentDrugs.filter(drug => 
+        drug.title.toLowerCase().includes(searchTerm) || 
+        drug.category.toLowerCase().includes(searchTerm)
+    );
+    loadPrducts(filteredDrugs);
+}
+
+function filterByCategory() {
+    const selectedCategory = categories.value;
+    let drugs = JSON.parse(localStorage.getItem('drugs')) || [];
+    if (selectedCategory === "all") {
+        if (drugs.length === 0) {
+            getDrugApi();
+            return;
+        }
+        loadPrducts(drugs);
+        return;
+    }
+    const filteredDrugs = drugs.filter(drug => drug.category === selectedCategory);
+    loadPrducts(filteredDrugs);
+    categories.value = selectedCategory; // Keep the selected category in the dropdown
+}
 
 
 

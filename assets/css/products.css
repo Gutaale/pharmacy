@@ -1,4 +1,47 @@
 @import 'common.css';
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.search .category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+.search .category select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    /* box-shadow: 0 0 12px rgba(0, 0, 0, .1); */
+    font-size: 1rem;
+}
+
+.search .search-box{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    background: var(--white-color);
+    width: 60%;
+    border-radius: 10px;
+}
+.search .search-box input{
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    /* box-shadow: 0 0 12px rgba(0, 0, 0, .1); */
+    font-size: 1rem;
+}
+
 .products{
     /* height: 100vh; */
     display: grid;
