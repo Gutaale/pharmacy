@@ -39,8 +39,8 @@ To run the project locally, follow these steps:
 ## File Structure
 
 - `index.html`: Main HTML file for the application.
-- `assets/css/style.css`: Stylesheet for the application.
-- `main.js`: JavaScript file containing functionality for the app.
+- html folder: which containe all important html files
+- assets folder: which contains - css files, javaScript code and images
 
 ## Contributors
 
